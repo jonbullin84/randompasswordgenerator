@@ -29,7 +29,7 @@ var randomCharacter = function (charactersProperty) {
 
 
 var setCharacterLimit = function () {
-  criteria.characterLimit = window.prompt("What's your prefered number of characters?\n[Length must be at least 8 characters but no more than 128 characters]");
+  criteria.characterLimit = window.prompt("What's your prefered number of characters?\n[Must be between 8 and 128 characters]");
   criteria.characterLimit = Number(criteria.characterLimit);
   if (typeof criteria.characterLimit === typeof 0 && criteria.characterLimit >= 8 && criteria.characterLimit <= 128) {
     window.alert("You set the prefered number of characters: " + criteria.characterLimit); 
@@ -121,10 +121,10 @@ var generatePassword = function () {
 
 
 
-// Get references to the #generate element
+
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -133,5 +133,4 @@ function writePassword() {
 
 };
 
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
